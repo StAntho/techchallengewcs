@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste d'équipage{% endblock %}
+
+{% block content %}
+            <!-- Main section -->
+            <main>
+            
+            <!-- New member form -->
+            {% if app.request.get('_route') == 'update' %}
+                <h2>Modifier un(e) Argonaute</h2>
+                {{ form_start(form, {attr:{'class':"new-member-form"} }) }}
+                    {{ form_row(form.name, {'label':'Modifier le nom de l\'argonaute'}) }}
+                    <button type="submit">Modifier</button>
+                {{ form_end(form) }}
+            {% else %}
+                <h2>Ajouter un(e) Argonaute</h2>
+                {{ form_start(form, {attr:{'class':"new-member-form"} }) }}
+                    {{ form_row(form.name, {attr:{'placeholder':"Charalampos"}, 'label':'Nom de l\'argonaute' }) }}
+                    <button type="submit">Envoyer</button>
+                {{ form_end(form) }}
+            {% endif %}
+
+            
+            {# <section class="registration">
+            </section> #}
+            
+            <!-- Member list -->
+            <h2>Membres de l'équipage</h2>
+            <section class="member-list">
+            {% if all is empty %}
+                <div id="emptyShip">
+                    <p>Aucun Argonaute n'est inscrit</p>
+                </div>
+            {% else %}
+                {% for argonaute in all %}
+                <div class="member-item">
+                <div class="crud">
+                    <small class="text-muted"><a href="{{ path('update', {id:argonaute.id} ) }}">Modifier</a></small> |
+                    <small class="text-muted"><a href="{{ path('delete', {id:argonaute.id} ) }}" onclick="return confirm('Etes vous sur de vouloir supprimer cet argonaute ?')">
+                    Supprimer 
+                    </a></small>
+                </div>
+                <h3>{{argonaute.name}}</h3>
+                <h4><small class="text-muted">Inscrit le {{ argonaute.registeredAt | date("d/m/Y \\à H\\hi")}}</small></h4>
+                </div>
+                {% endfor %}
+            {% endif %}
+            </section>
+            </main>
+
+{% endblock %}

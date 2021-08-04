@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    max-width: 85vw;
+    margin: 0 auto;
+}
+
+header {
+    background: #f4f4f4;
+    text-align: center;
+    /* padding: 2em; */
+}
+
+header img {
+    max-width: 96px;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h1,
+h3,
+#emptyShip {
+    color: #f76c6c;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.new-member-form {
+    margin: 2em 0 4em 0;
+    text-align: center;
+}
+
+.registration {
+    height: 20vw;
+    padding-top: 10vw;
+    background: url(../img/argo.jpg) no-repeat;
+    background-size: cover;
+}
+
+form li {
+    list-style: none;
+    color: red;
+    margin: auto;
+}
+
+form button {
+    background-color: #f76c6c;
+    margin: .25vw;
+    border-radius: 15%;
+}
+
+form button:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.member-list {
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+}
+
+#emptyShip {
+    width: 100%;
+    text-align: center;
+    border: 2px solid #f76c6c;
+    border-radius: 5%;
+}
+
+.crud {
+    text-align: right;
+}
+
+.crud a {
+    color: black;
+    text-decoration: none;
+}
+
+.crud a:hover {
+    text-decoration: underline;
+}
+
+.member-item {
+    width: 25vw;
+    background-color: white;
+    text-align: center;
+    border: 2px solid #f76c6c;
+    border-radius: 5%;
+    margin: 1vw;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+    color: #fff;
+    background: #f76c6c;
+    padding: 0.25em 0;
+}
